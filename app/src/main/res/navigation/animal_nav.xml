@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/animal_nav"
+    app:startDestination="@id/listFragment">
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.omidavz.animalsapp.view.ListFragment"
+        android:label="Animals">
+        <action
+            android:id="@+id/actionDetail"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.omidavz.animalsapp.view.DetailFragment"
+        android:label="Animal Details">
+        <action
+            android:id="@+id/actionList"
+            app:destination="@id/listFragment" />
+        <argument
+            android:name="animal"
+            android:defaultValue="@null"
+            app:argType="com.omidavz.animalsapp.model.Animal"
+            app:nullable="true" />
+    </fragment>
+</navigation>
